@@ -11,6 +11,9 @@
     $ adb connect localhost
     $ scrcpy -s localhost
 
+    集成gapps和libhoudini的redroid:
+    https://hub.docker.com/r/teddynight/redroid
+
 English | [简体中文](README.zh-cn.md)
 
 # Table of contents
