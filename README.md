@@ -1,3 +1,16 @@
+    $ sudo modprobe -f -r binder_linux
+    $ sudo modprobe binder_linux devices=binder,hwbinder,vndbinder
+    $ lsmod | grep -e ashmem_linux -e binder_linux
+    ashmem_linux           20480  0
+    binder_linux          204800  0
+    $ ls -alh /dev/binder /dev/ashmem
+    crw------- 1 root root 10, 120 Jun  9 03:51 /dev/ashmem
+    crw-rw-rw- 1 root root 10, 124 May 29 20:23 /dev/binder
+    $ sudo chmod 666 /dev/ashmem
+    $ sudo docker run -itd --rm --privileged -v ~/data14:/data -p 5555:5555 redroid/redroid:14.0.0-latest
+    $ adb connect localhost
+    $ scrcpy -s localhost
+
 English | [简体中文](README.zh-cn.md)
 
 # Table of contents
