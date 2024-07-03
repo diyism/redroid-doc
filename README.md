@@ -14,6 +14,21 @@
     集成gapps和libhoudini的redroid:
     https://hub.docker.com/r/teddynight/redroid
 
+    docker run -itd --rm --privileged \
+    -v ~/data_redroid_teddynight:/data \
+    -p 5555:5555 \
+    teddynight/redroid:latest \
+    androidboot.redroid_net_proxy_type=static \
+    androidboot.hardware=mt6891 \
+    ro.product.cpu.abilist=x86_64,arm64-v8a,x86,armeabi-v7a,armeabi \
+    ro.product.cpu.abilist64=x86_64,arm64-v8a \
+    ro.product.cpu.abilist32=x86,armeabi-v7a,armeabi \
+    ro.dalvik.vm.isa.arm=x86 \
+    ro.dalvik.vm.isa.arm64=x86_64 \
+    ro.enable.native.bridge.exec=1 \
+    ro.enable.native.bridge.exec64=1 \
+    ro.dalvik.vm.native.bridge=libhoudini.so 
+
 English | [简体中文](README.zh-cn.md)
 
 # Table of contents
