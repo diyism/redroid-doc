@@ -14,7 +14,7 @@
     集成gapps和libhoudini的redroid:
     https://hub.docker.com/r/teddynight/redroid
 
-    docker run -itd --rm --privileged \
+    $ docker run -itd --rm --privileged \
     -v ~/data_redroid_teddynight:/data \
     -p 5555:5555 \
     teddynight/redroid:latest \
